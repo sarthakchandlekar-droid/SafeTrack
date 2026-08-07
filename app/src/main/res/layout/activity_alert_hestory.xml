@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alert History"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Every SOS, fall, and device event for Ananya"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <!-- Chips -->
+            <HorizontalScrollView
+                android:id="@+id/chip_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_chip_selected"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:text="All"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:text="SOS"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:text="Fall"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="8dp"
+                        android:text="Battery"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Alerts List -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/chip_scroll">
+
+                <!-- SOS Alert -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/icon_sos"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/sos_red_light"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_dialog_alert"
+                                app:tint="@color/sos_red" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_sos_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="SOS Alert"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon_sos"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Today, 9:42 AM"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_sos_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="MG Road Metro Station, Bandra West"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="#FCECEC"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_location">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="4dp"
+                                android:text="Resolved in 4 min"
+                                android:textColor="@color/sos_red"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Possible Fall Detected -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/icon_fall"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/fall_yellow_light"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_dialog_info"
+                                app:tint="@color/fall_yellow" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_fall_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Possible Fall Detected"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon_fall"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yesterday, 5:14 PM"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_fall_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="St. Xavier's College, Fort"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_fall_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_fall_title" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="#FFF7E1"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_fall_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_fall_location">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="4dp"
+                                android:text="Auto-dismissed"
+                                android:textColor="@color/fall_yellow"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Low Battery Warning -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/icon_battery"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/battery_grey_light"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_lock_idle_low_battery"
+                                app:tint="@color/battery_grey" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_battery_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Low Battery Warning"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon_battery"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mon, 8:03 PM"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_battery_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Home · battery was at 15%"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_battery_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_battery_title" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="#E9ECEF"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_battery_title"
+                            app:layout_constraintTop_toBottomOf="@id/tv_battery_info">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="4dp"
+                                android:text="Charged at 8:40 PM"
+                                android:textColor="@color/battery_grey"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Older SOS Alert -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/icon_sos_old"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/sos_red_light"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_dialog_alert"
+                                app:tint="@color/sos_red" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_sos_title_old"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="SOS Alert"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon_sos_old"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sat, 7:52 PM"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_sos_location_old"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Carter Road Promenade"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_old"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title_old" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            app:cardBackgroundColor="#FCECEC"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_old"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_location_old">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="4dp"
+                                android:text="Resolved in 2 min"
+                                android:textColor="@color/sos_red"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/text_secondary"
+        app:itemTextColor="@color/text_secondary"
+        app:labelVisibilityMode="labeled"
+        app:selectedItemId="@id/nav_alerts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

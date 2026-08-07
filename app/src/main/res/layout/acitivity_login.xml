@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Top Header -->
+
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="0dp"
+            android:layout_height="320dp"
+            android:background="#131A33"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_watch"
+                android:background="@drawable/bg_gold_round"
+                android:padding="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SafeTrack"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUARDIAN"
+                android:textColor="#D89A3A"
+                android:textStyle="bold"
+                android:letterSpacing=".2"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safety on your wrist — watched over, always"
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"
+                android:layout_marginTop="18dp"/>
+
+        </LinearLayout>
+
+        <!-- Welcome -->
+
+        <TextView
+            android:id="@+id/txtWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome back"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="#1A1A1A"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtSub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sign in to keep watch over your child's safety, location and alerts."
+            android:textColor="#6E6E6E"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Phone -->
+
+        <TextView
+            android:id="@+id/lblPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHONE NUMBER"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@id/txtSub"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="+91 98200 45671"
+            android:inputType="phone"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/lblPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Password -->
+
+        <TextView
+            android:id="@+id/lblPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PASSWORD"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintTop_toBottomOf="@id/etPhone"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/lblPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textColor="#2F7D6A"
+            android:textStyle="bold"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/etPassword"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Login Button -->
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_gold_button"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txtForgot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Register -->
+
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New guardian? Create an account"
+            android:textSize="16sp"
+            android:textColor="#444444"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

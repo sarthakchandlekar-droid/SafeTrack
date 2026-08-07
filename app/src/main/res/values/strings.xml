@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="home">Home</string>
+    <string name="alerts">Alerts</string>
+    <string name="contacts">Contacts</string>
+    <string name="profile">Profile</string>
+</resources>
