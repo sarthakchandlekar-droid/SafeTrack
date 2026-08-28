@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Alert History"
+                android:text="@string/alert_history"
                 android:textColor="@color/text_primary"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -62,7 +63,7 @@
                         android:background="@drawable/bg_chip_selected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="All"
+                        android:text="@string/all"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 
@@ -73,7 +74,7 @@
                         android:background="@drawable/bg_chip_unselected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="SOS"
+                        android:text="@string/sos"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
 
@@ -84,7 +85,7 @@
                         android:background="@drawable/bg_chip_unselected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="Fall"
+                        android:text="@string/fall"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
 
@@ -95,7 +96,7 @@
                         android:background="@drawable/bg_chip_unselected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="Battery"
+                        android:text="@string/battery"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -146,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="SOS Alert"
+                            android:text="@string/sos_alert"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -167,7 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="MG Road Metro Station, Bandra West"
+                            android:text="@string/mg_road_metro_station_bandra_west"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="@id/tv_sos_title"
@@ -188,7 +189,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="Resolved in 4 min"
+                                android:text="@string/resolved_in_4_min"
                                 android:textColor="@color/sos_red"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -233,7 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="Possible Fall Detected"
+                            android:text="@string/possible_fall_detected"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -243,7 +244,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Yesterday, 5:14 PM"
+                            android:text="@string/yesterday_5_14_pm"
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +255,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="St. Xavier's College, Fort"
+                            android:text="@string/st_xavier_s_college_fort"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="@id/tv_fall_title"
@@ -275,7 +276,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="Auto-dismissed"
+                                android:text="@string/auto_dismissed"
                                 android:textColor="@color/fall_yellow"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -320,7 +321,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="Low Battery Warning"
+                            android:text="@string/low_battery_warning"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -330,7 +331,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Mon, 8:03 PM"
+                            android:text="@string/mon_8_03_pm"
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -362,7 +363,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="Charged at 8:40 PM"
+                                android:text="@string/charged_at_8_40_pm"
                                 android:textColor="@color/battery_grey"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -471,7 +472,6 @@
         app:itemIconTint="@color/text_secondary"
         app:itemTextColor="@color/text_secondary"
         app:labelVisibilityMode="labeled"
-        app:selectedItemId="@id/nav_alerts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 

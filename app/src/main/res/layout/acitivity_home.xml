@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:id="@+id/tv_greeting_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GOOD EVENING"
+                android:text="@string/good_evening"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -37,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Hello, Rohan"
+                android:text="@string/hello_rohan"
                 android:textColor="@color/text_primary"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -54,10 +55,11 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/tv_profile_initial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="R"
+                    android:text="@string/r"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
@@ -103,7 +105,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="AS"
+                            android:text="@string/as"
                             android:textColor="@color/text_primary"
                             android:textSize="24sp"
                             android:textStyle="bold" />
@@ -114,7 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Ananya Sharma"
+                        android:text="@string/ananya_sharma"
                         android:textColor="@color/text_primary"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -127,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Daughter · SafeTrack Band #0417"
+                        android:text="@string/daughter_safetrack_band_0417"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -146,29 +148,19 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_person_details">
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:orientation="horizontal"
                             android:paddingHorizontal="12dp"
-                            android:paddingVertical="6dp">
-
-                            <ImageView
-                                android:layout_width="14dp"
-                                android:layout_height="14dp"
-                                android:src="@android:drawable/checkbox_on_background"
-                                app:tint="@color/accent_green" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="6dp"
-                                android:text="Safe · updated 2 min ago"
-                                android:textColor="@color/accent_green"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                            android:paddingVertical="6dp"
+                            android:text="@string/safe_updated_2_min_ago"
+                            android:textColor="@color/accent_green"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@android:drawable/checkbox_on_background"
+                            android:drawablePadding="6dp"
+                            app:drawableTint="@color/accent_green" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <!-- Stats Row -->
@@ -177,6 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:orientation="horizontal"
+                        android:baselineAligned="false"
                         app:layout_constraintTop_toBottomOf="@id/status_badge">
 
                         <!-- Battery -->
@@ -193,12 +186,13 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/ic_lock_idle_low_battery" />
+                                android:src="@android:drawable/ic_lock_idle_low_battery"
+                                android:contentDescription="@string/battery_icon" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="82%"
+                                android:text="@string/_82"
                                 android:textColor="@color/text_primary"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -206,9 +200,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BATTERY"
+                                android:text="@string/battery"
                                 android:textColor="@color/text_secondary"
-                                android:textSize="10sp" />
+                                android:textSize="11sp" />
                         </LinearLayout>
 
                         <!-- GSM Signal -->
@@ -225,12 +219,13 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/stat_sys_speakerphone" />
+                                android:src="@android:drawable/stat_sys_speakerphone"
+                                android:contentDescription="@string/gsm_signal" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Strong"
+                                android:text="@string/strong"
                                 android:textColor="@color/text_primary"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -238,9 +233,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="GSM SIGNAL"
+                                android:text="@string/gsm_signal"
                                 android:textColor="@color/text_secondary"
-                                android:textSize="10sp" />
+                                android:textSize="11sp" />
                         </LinearLayout>
 
                         <!-- GPS Accuracy -->
@@ -257,12 +252,13 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/ic_menu_mylocation" />
+                                android:src="@android:drawable/ic_menu_mylocation"
+                                android:contentDescription="@string/gps_accuracy" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="±5 m"
+                                android:text="@string/_5_m"
                                 android:textColor="@color/text_primary"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -270,9 +266,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="GPS ACCURACY"
+                                android:text="@string/gps_accuracy"
                                 android:textColor="@color/text_secondary"
-                                android:textSize="10sp" />
+                                android:textSize="11sp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -286,7 +282,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Live location"
+                android:text="@string/live_location"
                 android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -297,7 +293,7 @@
                 android:id="@+id/tv_full_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Full map ›"
+                android:text="@string/full_map"
                 android:textColor="@color/accent_green"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -339,6 +335,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@android:drawable/ic_dialog_map"
+                        android:contentDescription="@string/live_location"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -356,29 +353,19 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:orientation="horizontal"
                             android:paddingHorizontal="8dp"
-                            android:paddingVertical="4dp">
-
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:src="@android:drawable/ic_menu_mylocation"
-                                app:tint="@color/accent_green" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="MG Road, Bandra West"
-                                android:textColor="@color/text_primary"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                            android:paddingVertical="4dp"
+                            android:text="@string/mg_road_bandra_west"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:drawableStartCompat="@android:drawable/ic_menu_mylocation"
+                            android:drawablePadding="4dp"
+                            app:drawableTint="@color/accent_green" />
                     </com.google.android.material.card.MaterialCardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -414,13 +401,14 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_call" />
+                            android:src="@android:drawable/ic_menu_call"
+                            android:contentDescription="@string/call_ananya" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Call Ananya"
+                            android:text="@string/call_ananya"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -449,13 +437,14 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_directions" />
+                            android:src="@android:drawable/ic_menu_directions"
+                            android:contentDescription="@string/directions" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Directions"
+                            android:text="@string/directions"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -484,13 +473,14 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_recent_history" />
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:contentDescription="@string/history" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="History"
+                            android:text="@string/history"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"
                             android:textStyle="bold" />

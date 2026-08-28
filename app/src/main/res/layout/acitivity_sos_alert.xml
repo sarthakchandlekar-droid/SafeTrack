@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="• SOS ALERT •"
+                android:text="@string/sos_alert_label"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -83,6 +83,7 @@
                         android:layout_height="36dp"
                         android:layout_gravity="center"
                         android:src="@android:drawable/ic_dialog_alert"
+                        android:contentDescription="@string/sos_alert"
                         app:tint="@color/sos_red" />
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -92,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Ananya Sharma"
+                android:text="@string/ananya_sharma"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -105,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Triggered at 9:42 AM · 12 seconds ago"
+                android:text="@string/sos_triggered_time"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -145,7 +146,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Near MG Road Metro Station"
+                            android:text="@string/near_mg_road_metro_station"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -154,7 +155,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Bandra West, Mumbai · GPS ±5 m"
+                            android:text="@string/bandra_west_mumbai_gps_5_m"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -196,6 +197,7 @@
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:src="@android:drawable/ic_dialog_map"
+                        android:contentDescription="@string/live_location"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -212,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
-                android:text="TAKE ACTION"
+                android:text="@string/take_action"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -227,7 +229,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bg_sos_action_primary"
-                android:text="Call Ananya Now"
+                android:text="@string/call_ananya_now"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -235,6 +237,7 @@
                 android:drawableStart="@android:drawable/ic_menu_call"
                 android:drawablePadding="-40dp"
                 android:paddingStart="40dp"
+                android:paddingEnd="40dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_action_label" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -244,7 +247,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bg_sos_action_secondary"
-                android:text="Call Police"
+                android:text="@string/call_police"
                 android:textAllCaps="false"
                 android:textColor="@color/sos_red"
                 android:textSize="18sp"
@@ -252,6 +255,7 @@
                 android:drawableStart="@android:drawable/ic_menu_info_details"
                 android:drawablePadding="-80dp"
                 android:paddingStart="80dp"
+                android:paddingEnd="80dp"
                 app:layout_constraintTop_toBottomOf="@id/btn_call_ananya" />
 
             <!-- Other Contacts -->
@@ -275,7 +279,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="MP"
+                        android:text="@string/mp"
                         android:textColor="#00796B"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -292,7 +296,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="RS"
+                        android:text="@string/rs"
                         android:textColor="#F57C00"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -302,7 +306,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="Notify Meera &amp; Rakesh (other contacts)"
+                    android:text="@string/notify_other_contacts"
                     android:textColor="@color/text_primary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -313,7 +317,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="32dp"
-                android:text="This was a false alarm — dismiss"
+                android:text="@string/false_alarm_dismiss"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 android:textStyle="bold"

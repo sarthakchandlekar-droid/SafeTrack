@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Device &amp; Profile"
+                android:text="@string/device_amp_profile"
                 android:textColor="@color/text_primary"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -62,7 +62,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_gravity="center"
-                            android:contentDescription="Device icon"
+                            android:contentDescription="@string/device_icon"
                             android:src="@android:drawable/ic_lock_idle_low_battery"
                             app:tint="@color/button_gold" />
                     </com.google.android.material.card.MaterialCardView>
@@ -72,7 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="SafeTrack Band #0417"
+                        android:text="@string/safetrack_band_0417"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -98,7 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
-                            android:text="Connected · synced just now"
+                            android:text="@string/connected_synced_just_now"
                             android:textColor="#9CA3AF"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -125,14 +125,14 @@
                                 android:layout_height="wrap_content"
                                 android:text="BATTERY"
                                 android:textColor="#9CA3AF"
-                                android:textSize="10sp"
+                                android:textSize="11sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="82%"
+                                android:text="@string/_82"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -160,16 +160,16 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="GSM SIGNAL"
+                                android:text="@string/gsm_signal"
                                 android:textColor="#9CA3AF"
-                                android:textSize="10sp"
+                                android:textSize="11sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Strong"
+                                android:text="@string/strong"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -229,7 +229,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Rohan Sharma"
+                        android:text="@string/rohan_sharma"
                         android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -240,7 +240,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="rohan.sharma@gmail.com"
+                        android:text="@string/rohan_sharma_gmail_com"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="@id/tv_user_name"
@@ -251,7 +251,7 @@
                         android:layout_height="20dp"
                         android:src="@android:drawable/ic_menu_more"
                         android:rotation="-90"
-                        android:contentDescription="Edit profile"
+                        android:contentDescription="@string/edit_profile"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -295,7 +295,7 @@
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 android:src="@android:drawable/ic_popup_reminder"
-                                android:contentDescription="Notification preferences"
+                                android:contentDescription="@string/notification_preferences"
                                 app:tint="@color/text_secondary" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -316,14 +316,15 @@
                             android:layout_height="20dp"
                             android:src="@android:drawable/ic_menu_more"
                             android:rotation="-90"
-                            android:contentDescription="Open"
+                            android:contentDescription="@string/open"
                             app:layout_constraintBottom_toBottomOf="@id/icon_pref"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="@id/icon_pref"
                             app:tint="@color/text_secondary" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6" android:layout_marginHorizontal="16dp"/>
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp" android:background="#F3F4F6" android:layout_marginHorizontal="16dp"/>
 
                     <!-- Geofence Zones -->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -345,7 +346,7 @@
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 android:src="@android:drawable/ic_menu_mylocation"
-                                android:contentDescription="Geofence zones"
+                                android:contentDescription="@string/geofence_zones"
                                 app:tint="@color/text_secondary" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -395,7 +396,7 @@
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 android:src="@android:drawable/ic_menu_info_details"
-                                android:contentDescription="Privacy and data"
+                                android:contentDescription="@string/privacy_and_data"
                                 app:tint="@color/text_secondary" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -403,7 +404,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="Privacy &amp; Data"
+                            android:text="@string/privacy_amp_data"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -445,7 +446,7 @@
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 android:src="@android:drawable/ic_menu_help"
-                                android:contentDescription="Help and support"
+                                android:contentDescription="@string/help_and_support"
                                 app:tint="@color/text_secondary" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -453,7 +454,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="Help &amp; Support"
+                            android:text="@string/help_amp_support"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -483,7 +484,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Log Out"
+                android:text="@string/log_out"
                 android:textColor="@color/sos_red"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -504,7 +505,6 @@
         app:itemIconTint="@color/text_secondary"
         app:itemTextColor="@color/text_secondary"
         app:labelVisibilityMode="labeled"
-        app:selectedItemId="@id/nav_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
