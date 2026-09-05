@@ -45,24 +45,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_greeting_label" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_profile_icon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:cardBackgroundColor="#1A1C1E"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tv_profile_initial"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/r"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-            </com.google.android.material.card.MaterialCardView>
 
             <!-- Main Status Card -->
             <com.google.android.material.card.MaterialCardView
@@ -102,6 +85,7 @@
                         app:layout_constraintTop_toTopOf="@id/avatar_outer_ring">
 
                         <TextView
+                            android:id="@+id/tv_child_avatar_initial"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -151,6 +135,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawablePadding="6dp"
                             android:gravity="center"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="6dp"
@@ -159,7 +144,6 @@
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:drawableStartCompat="@android:drawable/checkbox_on_background"
-                            android:drawablePadding="6dp"
                             app:drawableTint="@color/accent_green" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -168,8 +152,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:orientation="horizontal"
                         android:baselineAligned="false"
+                        android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@id/status_badge">
 
                         <!-- Battery -->
@@ -186,8 +170,8 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/ic_lock_idle_low_battery"
-                                android:contentDescription="@string/battery_icon" />
+                                android:contentDescription="@string/battery_icon"
+                                android:src="@android:drawable/ic_lock_idle_low_battery" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -219,8 +203,8 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/stat_sys_speakerphone"
-                                android:contentDescription="@string/gsm_signal" />
+                                android:contentDescription="@string/gsm_signal"
+                                android:src="@android:drawable/stat_sys_speakerphone" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -236,6 +220,11 @@
                                 android:text="@string/gsm_signal"
                                 android:textColor="@color/text_secondary"
                                 android:textSize="11sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:background="@color/white" />
                         </LinearLayout>
 
                         <!-- GPS Accuracy -->
@@ -252,8 +241,8 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@android:drawable/ic_menu_mylocation"
-                                android:contentDescription="@string/gps_accuracy" />
+                                android:contentDescription="@string/gps_accuracy"
+                                android:src="@android:drawable/ic_menu_mylocation" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -316,12 +305,6 @@
                     android:layout_height="match_parent">
 
                     <!-- Simple map grid representation -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
 
                     <View
                         android:layout_width="2dp"
@@ -371,123 +354,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Action Buttons -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/card_map">
 
-                <!-- Call Button -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#E5E7EB"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_call"
-                            android:contentDescription="@string/call_ananya" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/call_ananya"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Directions Button -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#E5E7EB"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_directions"
-                            android:contentDescription="@string/directions" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/directions"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- History Button -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="#E5E7EB"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_recent_history"
-                            android:contentDescription="@string/history" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/history"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -17,12 +17,14 @@
             android:layout_height="wrap_content">
 
             <!-- Red Header -->
+
             <View
                 android:id="@+id/sos_header"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@drawable/bg_sos_header"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp" />
 
             <TextView
                 android:id="@+id/tv_sos_label"
@@ -222,6 +224,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_map_sos" />
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_call_ananya"
                 android:layout_width="match_parent"
@@ -239,7 +242,6 @@
                 android:paddingStart="40dp"
                 android:paddingEnd="40dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_action_label" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_call_police"
                 android:layout_width="match_parent"

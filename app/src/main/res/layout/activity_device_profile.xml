@@ -275,6 +275,69 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Emergency Guardian Contact -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/icon_emergency_contact"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardBackgroundColor="@color/icon_btn_bg"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_menu_call"
+                                android:contentDescription="Emergency Contact"
+                                app:tint="@color/text_secondary" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_emergency_contact_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="Emergency Guardian Contact"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/icon_emergency_contact"
+                            app:layout_constraintTop_toTopOf="@id/icon_emergency_contact" />
+
+                        <TextView
+                            android:id="@+id/tv_emergency_contact_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="2dp"
+                            android:text="+91 98765 43210"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toEndOf="@id/icon_emergency_contact"
+                            app:layout_constraintTop_toBottomOf="@id/tv_emergency_contact_label" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_more"
+                            android:rotation="-90"
+                            android:contentDescription="Open"
+                            app:layout_constraintBottom_toBottomOf="@id/icon_emergency_contact"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/icon_emergency_contact"
+                            app:tint="@color/text_secondary" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp" android:background="#F3F4F6" android:layout_marginHorizontal="16dp"/>
+
                     <!-- Notification Preferences -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"

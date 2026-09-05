@@ -23,10 +23,6 @@ public class AlertHistoryActivity extends AppCompatActivity {
                 return true;
             } else if (id == R.id.nav_alerts) {
                 return true;
-            } else if (id == R.id.nav_contacts) {
-                startActivity(new Intent(AlertHistoryActivity.this, EmergencyContactActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
             } else if (id == R.id.nav_profile) {
                 startActivity(new Intent(AlertHistoryActivity.this, ProfileActivity.class));
                 overridePendingTransition(0, 0);

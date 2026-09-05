@@ -19,9 +19,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".AlertHistoryActivity" />
-        <activity android:name=".EmergencyContactActivity" />
         <activity android:name=".ProfileActivity" />
     </application>
 

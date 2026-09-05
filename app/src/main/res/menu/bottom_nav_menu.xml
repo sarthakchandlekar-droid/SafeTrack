@@ -9,10 +9,6 @@
         android:icon="@drawable/ic_popup_reminder"
         android:title="@string/alerts" />
     <item
-        android:id="@+id/nav_contacts"
-        android:icon="@drawable/ic_menu_myplaces"
-        android:title="@string/contacts" />
-    <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_menu_view"
         android:title="@string/profile" />
