@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/take_action"
+                android:text="TAKE ACTION"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -224,109 +224,121 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_map_sos" />
 
-
+            <!-- Accept Alert Button -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_call_ananya"
+                android:id="@+id/btn_accept_alert"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bg_sos_action_primary"
-                android:text="@string/call_ananya_now"
+                android:text="Accepted Alert"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:drawableStart="@android:drawable/ic_menu_call"
-                android:drawablePadding="-40dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_action_label" />
+
+            <!-- Call Child Direct Button -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_call_police"
+                android:id="@+id/btn_call_ananya"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bg_sos_action_secondary"
-                android:text="@string/call_police"
+                android:text="@string/call_ananya_now"
                 android:textAllCaps="false"
-                android:textColor="@color/sos_red"
-                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:drawableStart="@android:drawable/ic_menu_info_details"
-                android:drawablePadding="-80dp"
-                android:paddingStart="80dp"
-                android:paddingEnd="80dp"
+                android:drawableStart="@android:drawable/ic_menu_call"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_accept_alert" />
+
+            <!-- Suggestion Section -->
+            <TextView
+                android:id="@+id/tv_suggestion_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="SUGGESTION FOR GUARDIAN"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_call_ananya" />
 
-            <!-- Other Contacts -->
-            <LinearLayout
-                android:id="@+id/layout_other_contacts"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_suggestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="24dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/btn_call_police">
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="#FFF8E1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#FFE082"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_suggestion_label">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    app:cardBackgroundColor="@color/avatar_mp"
-                    app:cardCornerRadius="18dp"
-                    app:cardElevation="0dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/mp"
-                        android:textColor="#00796B"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_marginStart="8dp"
-                    app:cardBackgroundColor="@color/avatar_rs"
-                    app:cardCornerRadius="18dp"
-                    app:cardElevation="0dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/rs"
-                        android:textColor="#F57C00"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:text="@string/notify_other_contacts"
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💡 Guardian Emergency Advice:"
+                        android:textColor="#B78103"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="If your child is unresponsive or in danger, you may optionally dial local emergency services (112)."
+                        android:textColor="#5D4037"
+                        android:textSize="13sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_call_police"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_sos_action_secondary"
+                        android:text="Optionally Call Emergency (112)"
+                        android:textAllCaps="false"
+                        android:textColor="@color/sos_red"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- False Alarm Dismiss Button (Centered at Bottom) -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_false_alarm_dismiss"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginBottom="32dp"
+                android:paddingHorizontal="32dp"
+                android:background="@drawable/bg_sos_action_secondary"
                 android:text="@string/false_alarm_dismiss"
+                android:textAllCaps="false"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layout_other_contacts" />
+                app:layout_constraintTop_toBottomOf="@id/card_suggestion" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

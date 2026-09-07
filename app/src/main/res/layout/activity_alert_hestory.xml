@@ -37,13 +37,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Every SOS, fall, and device event for Ananya"
+                android:text="Categorized by signal frequency and urgency level"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-            <!-- Chips -->
+            <!-- Chips / Filter Tabs -->
             <HorizontalScrollView
                 android:id="@+id/chip_scroll"
                 android:layout_width="match_parent"
@@ -57,7 +57,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
+                    <!-- All Chip -->
                     <TextView
+                        android:id="@+id/chip_all"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_chip_selected"
@@ -67,42 +69,35 @@
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 
+                    <!-- SOS Chip -->
                     <TextView
+                        android:id="@+id/chip_sos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@drawable/bg_chip_unselected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="@string/sos"
+                        android:text=" SOS "
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
 
+                    <!-- Daily Updates Chip -->
                     <TextView
+                        android:id="@+id/chip_daily"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:background="@drawable/bg_chip_unselected"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="8dp"
-                        android:text="@string/fall"
-                        android:textColor="@color/text_secondary"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:background="@drawable/bg_chip_unselected"
-                        android:paddingHorizontal="24dp"
-                        android:paddingVertical="8dp"
-                        android:text="@string/battery"
+                        android:text="Daily Updates"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold" />
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Alerts List -->
+            <!-- Alerts List Container -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,8 +105,9 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/chip_scroll">
 
-                <!-- SOS Alert -->
+                <!-- 1. Critical SOS Alert Card -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_sos_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -125,7 +121,7 @@
                         android:padding="20dp">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/icon_sos"
+                            android:id="@+id/icon_sos_1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             app:cardBackgroundColor="@color/sos_red_light"
@@ -143,15 +139,15 @@
                         </com.google.android.material.card.MaterialCardView>
 
                         <TextView
-                            android:id="@+id/tv_sos_title"
+                            android:id="@+id/tv_sos_title_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="@string/sos_alert"
+                            android:text="Critical SOS Alert"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@id/icon_sos"
+                            app:layout_constraintStart_toEndOf="@id/icon_sos_1"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -164,15 +160,15 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tv_sos_location"
+                            android:id="@+id/tv_sos_desc_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/mg_road_metro_station_bandra_west"
+                            android:text="MG Road Metro Station · High Signal Frequency (5 taps / 30s)"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp"
-                            app:layout_constraintStart_toStartOf="@id/tv_sos_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title" />
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_1"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title_1" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
@@ -181,15 +177,15 @@
                             app:cardBackgroundColor="#FCECEC"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
-                            app:layout_constraintStart_toStartOf="@id/tv_sos_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_sos_location">
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_1"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_desc_1">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="@string/resolved_in_4_min"
+                                android:text="Critical SOS Emergency 🚨"
                                 android:textColor="@color/sos_red"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -197,8 +193,9 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Possible Fall Detected -->
+                <!-- 2. Daily Update Card -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_daily_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -212,10 +209,10 @@
                         android:padding="20dp">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/icon_fall"
+                            android:id="@+id/icon_daily_1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            app:cardBackgroundColor="@color/fall_yellow_light"
+                            app:cardBackgroundColor="#E8F5E9"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -225,67 +222,68 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
-                                android:src="@android:drawable/ic_dialog_info"
-                                app:tint="@color/fall_yellow" />
+                                android:src="@android:drawable/ic_menu_mylocation"
+                                app:tint="#2E7D32" />
                         </com.google.android.material.card.MaterialCardView>
 
                         <TextView
-                            android:id="@+id/tv_fall_title"
+                            android:id="@+id/tv_daily_title_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="@string/possible_fall_detected"
+                            android:text="Daily Location Update"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@id/icon_fall"
+                            app:layout_constraintStart_toEndOf="@id/icon_daily_1"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/yesterday_5_14_pm"
+                            android:text="Today, 2:15 PM"
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tv_fall_location"
+                            android:id="@+id/tv_daily_desc_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/st_xavier_s_college_fort"
+                            android:text="St. Xavier's College Campus · Normal Routine Signal (1 / 10m)"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp"
-                            app:layout_constraintStart_toStartOf="@id/tv_fall_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_fall_title" />
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_daily_title_1"
+                            app:layout_constraintTop_toBottomOf="@id/tv_daily_title_1" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            app:cardBackgroundColor="#FFF7E1"
+                            app:cardBackgroundColor="#E8F5E9"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
-                            app:layout_constraintStart_toStartOf="@id/tv_fall_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_fall_location">
+                            app:layout_constraintStart_toStartOf="@id/tv_daily_title_1"
+                            app:layout_constraintTop_toBottomOf="@id/tv_daily_desc_1">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="@string/auto_dismissed"
-                                android:textColor="@color/fall_yellow"
+                                android:text="Daily Routine Update 🟢"
+                                android:textColor="#2E7D32"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </com.google.android.material.card.MaterialCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Low Battery Warning -->
+                <!-- 3. Daily Update Card -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_daily_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -299,10 +297,10 @@
                         android:padding="20dp">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/icon_battery"
+                            android:id="@+id/icon_daily_2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            app:cardBackgroundColor="@color/battery_grey_light"
+                            app:cardBackgroundColor="#E8F5E9"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -312,67 +310,68 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:layout_gravity="center"
-                                android:src="@android:drawable/ic_lock_idle_low_battery"
-                                app:tint="@color/battery_grey" />
+                                android:src="@android:drawable/ic_menu_mylocation"
+                                app:tint="#2E7D32" />
                         </com.google.android.material.card.MaterialCardView>
 
                         <TextView
-                            android:id="@+id/tv_battery_title"
+                            android:id="@+id/tv_daily_title_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="@string/low_battery_warning"
+                            android:text="Daily Location Update"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@id/icon_battery"
+                            app:layout_constraintStart_toEndOf="@id/icon_daily_2"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/mon_8_03_pm"
+                            android:text="Today, 11:30 AM"
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tv_battery_info"
+                            android:id="@+id/tv_daily_desc_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Home · battery was at 15%"
+                            android:text="School Safety Zone · Normal Routine Signal (1 / 10m)"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp"
-                            app:layout_constraintStart_toStartOf="@id/tv_battery_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_battery_title" />
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_daily_title_2"
+                            app:layout_constraintTop_toBottomOf="@id/tv_daily_title_2" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            app:cardBackgroundColor="#E9ECEF"
+                            app:cardBackgroundColor="#E8F5E9"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
-                            app:layout_constraintStart_toStartOf="@id/tv_battery_title"
-                            app:layout_constraintTop_toBottomOf="@id/tv_battery_info">
+                            app:layout_constraintStart_toStartOf="@id/tv_daily_title_2"
+                            app:layout_constraintTop_toBottomOf="@id/tv_daily_desc_2">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="@string/charged_at_8_40_pm"
-                                android:textColor="@color/battery_grey"
+                                android:text="Daily Routine Update 🟢"
+                                android:textColor="#2E7D32"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
                         </com.google.android.material.card.MaterialCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Older SOS Alert -->
+                <!-- 4. Critical SOS Alert Card -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_sos_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -386,7 +385,7 @@
                         android:padding="20dp">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/icon_sos_old"
+                            android:id="@+id/icon_sos_2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             app:cardBackgroundColor="@color/sos_red_light"
@@ -404,15 +403,15 @@
                         </com.google.android.material.card.MaterialCardView>
 
                         <TextView
-                            android:id="@+id/tv_sos_title_old"
+                            android:id="@+id/tv_sos_title_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="SOS Alert"
+                            android:text="Critical SOS Alert"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintStart_toEndOf="@id/icon_sos_old"
+                            app:layout_constraintStart_toEndOf="@id/icon_sos_2"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -425,15 +424,15 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/tv_sos_location_old"
+                            android:id="@+id/tv_sos_desc_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Carter Road Promenade"
+                            android:text="Carter Road Promenade · High Signal Frequency (5 taps / 30s)"
                             android:textColor="@color/text_secondary"
-                            android:textSize="14sp"
-                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_old"
-                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title_old" />
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_2"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_title_2" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="wrap_content"
@@ -442,15 +441,15 @@
                             app:cardBackgroundColor="#FCECEC"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp"
-                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_old"
-                            app:layout_constraintTop_toBottomOf="@id/tv_sos_location_old">
+                            app:layout_constraintStart_toStartOf="@id/tv_sos_title_2"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sos_desc_2">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="4dp"
-                                android:text="Resolved in 2 min"
+                                android:text="Critical SOS Emergency 🚨"
                                 android:textColor="@color/sos_red"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />

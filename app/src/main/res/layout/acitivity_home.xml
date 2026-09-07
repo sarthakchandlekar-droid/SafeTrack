@@ -26,7 +26,7 @@
                 android:id="@+id/tv_greeting_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/good_evening"
+                android:text="Good Times"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/hello_rohan"
+                android:text="Welcome"
                 android:textColor="@color/text_primary"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -100,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="@string/ananya_sharma"
+                        android:text="Child"
                         android:textColor="@color/text_primary"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -209,7 +209,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/strong"
+                                android:text="singal"
                                 android:textColor="@color/text_primary"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -225,39 +225,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
                                 android:background="@color/white" />
-                        </LinearLayout>
-
-                        <!-- GPS Accuracy -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/rounded_stat_bg"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:contentDescription="@string/gps_accuracy"
-                                android:src="@android:drawable/ic_menu_mylocation" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/_5_m"
-                                android:textColor="@color/text_primary"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/gps_accuracy"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="11sp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -317,8 +284,8 @@
                         android:id="@+id/map_pin"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@android:drawable/ic_dialog_map"
                         android:contentDescription="@string/live_location"
+                        android:src="@android:drawable/ic_dialog_map"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -339,6 +306,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:drawablePadding="4dp"
                             android:gravity="center"
                             android:paddingHorizontal="8dp"
                             android:paddingVertical="4dp"
@@ -347,7 +315,6 @@
                             android:textSize="12sp"
                             android:textStyle="bold"
                             app:drawableStartCompat="@android:drawable/ic_menu_mylocation"
-                            android:drawablePadding="4dp"
                             app:drawableTint="@color/accent_green" />
                     </com.google.android.material.card.MaterialCardView>
 

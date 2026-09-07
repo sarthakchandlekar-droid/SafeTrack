@@ -1,24 +1,37 @@
 package com.example.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    // API KEY = "paste the key here"
-
+    private static final int PERMISSION_REQUEST_CODE = 1001;
     private boolean isMapExpanded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_home);
+
+        // Request runtime permissions (GPS/Location, Notifications, Audio) for first-time user
+        checkAndRequestPermissions();
 
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
 
@@ -103,6 +116,25 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
+        // Status badge / Map pin signal receiver simulation trigger
+        MaterialCardView statusBadge = findViewById(R.id.status_badge);
+        ImageView mapPin = findViewById(R.id.map_pin);
+
+        View.OnClickListener signalTriggerListener = v -> {
+            SignalReceiverManager.ThreatLevel level = SignalReceiverManager.processIncomingSignal(
+                    HomeActivity.this,
+                    19.0760, 72.8777,
+                    "Near MG Road Metro Station, Bandra West"
+            );
+
+            if (level == SignalReceiverManager.ThreatLevel.NORMAL_UPDATE) {
+                Toast.makeText(HomeActivity.this, "Signal Received (Background update / Panic tap detected)", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        if (statusBadge != null) statusBadge.setOnClickListener(signalTriggerListener);
+        if (mapPin != null) mapPin.setOnClickListener(signalTriggerListener);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
@@ -121,5 +153,43 @@ public class HomeActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    private void checkAndRequestPermissions() {
+        List<String> permissionsNeeded = new ArrayList<>();
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                permissionsNeeded.add(Manifest.permission.POST_NOTIFICATIONS);
+            }
+        }
+
+        if (!permissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, permissionsNeeded.toArray(new String[0]), PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            boolean allGranted = true;
+            for (int result : grantResults) {
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    allGranted = false;
+                    break;
+                }
+            }
+            if (allGranted) {
+                Toast.makeText(this, "All permissions granted! SafeTrack active.", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
