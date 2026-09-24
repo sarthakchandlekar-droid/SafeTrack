@@ -81,6 +81,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="Enter parent full name"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="textPersonName"
                 android:padding="16dp"/>
 
@@ -100,6 +102,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="Enter 10-digit phone number"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="phone"
                 android:padding="16dp"/>
 
@@ -131,6 +135,8 @@
                         android:layout_marginTop="6dp"
                         android:background="@drawable/bg_edittext"
                         android:hint="e.g. 35"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
                         android:inputType="number"
                         android:padding="16dp"/>
                 </LinearLayout>
@@ -176,6 +182,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="e.g. Father, Mother, Guardian"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="text"
                 android:padding="16dp"/>
 
@@ -195,6 +203,8 @@
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="Min 5 chars, 1 symbol, 2 numbers"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="textPassword"
                 android:padding="16dp"/>
 
@@ -231,6 +241,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="Enter child full name"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="textPersonName"
                 android:padding="16dp"/>
 
@@ -262,6 +274,8 @@
                         android:layout_marginTop="6dp"
                         android:background="@drawable/bg_edittext"
                         android:hint="e.g. 10"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#888888"
                         android:inputType="number"
                         android:padding="16dp"/>
                 </LinearLayout>
@@ -307,6 +321,8 @@
                 android:layout_marginBottom="28dp"
                 android:background="@drawable/bg_edittext"
                 android:hint="Enter SafeTrack device ID (Optional)"
+                android:textColor="#1A1A1A"
+                android:textColorHint="#888888"
                 android:inputType="text"
                 android:padding="16dp"/>
 
