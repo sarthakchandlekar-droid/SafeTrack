@@ -6,9 +6,9 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -17,6 +17,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,11 +29,36 @@ public class HomeActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 1001;
     private boolean isMapExpanded = false;
+    private MapView mapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Configure OSMDroid User-Agent and internal tile storage (Pixel 7 / Android 13+ support)
+        Configuration.getInstance().load(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
+        Configuration.getInstance().setUserAgentValue(getPackageName());
+        Configuration.getInstance().setOsmdroidBasePath(getCacheDir());
+        Configuration.getInstance().setOsmdroidTileCache(getCacheDir());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_home);
+
+        // Setup OpenStreetMap MapView (No API Key Required!)
+        mapView = findViewById(R.id.map_view);
+        if (mapView != null) {
+            mapView.setTileSource(TileSourceFactory.MAPNIK);
+            mapView.setMultiTouchControls(true);
+
+            GeoPoint childLocation = new GeoPoint(19.0760, 72.8777); // MG Road, Bandra West
+            mapView.getController().setZoom(15.5);
+            mapView.getController().setCenter(childLocation);
+
+            Marker marker = new Marker(mapView);
+            marker.setPosition(childLocation);
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            marker.setTitle("Child Location - SafeTrack");
+            mapView.getOverlays().add(marker);
+            mapView.invalidate();
+        }
 
         // Request runtime permissions (GPS/Location, Notifications, Audio) for first-time user
         checkAndRequestPermissions();
@@ -116,9 +146,8 @@ public class HomeActivity extends AppCompatActivity {
             });
         }
 
-        // Status badge / Map pin signal receiver simulation trigger
+        // Status badge signal receiver simulation trigger
         MaterialCardView statusBadge = findViewById(R.id.status_badge);
-        ImageView mapPin = findViewById(R.id.map_pin);
 
         View.OnClickListener signalTriggerListener = v -> {
             SignalReceiverManager.ThreatLevel level = SignalReceiverManager.processIncomingSignal(
@@ -133,7 +162,6 @@ public class HomeActivity extends AppCompatActivity {
         };
 
         if (statusBadge != null) statusBadge.setOnClickListener(signalTriggerListener);
-        if (mapPin != null) mapPin.setOnClickListener(signalTriggerListener);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
@@ -153,6 +181,22 @@ public class HomeActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mapView != null) {
+            mapView.onResume();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mapView != null) {
+            mapView.onPause();
+        }
     }
 
     private void checkAndRequestPermissions() {
