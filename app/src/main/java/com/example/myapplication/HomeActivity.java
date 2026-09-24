@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -33,9 +32,9 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Configure OSMDroid User-Agent and internal tile storage (Pixel 7 / Android 13+ support)
-        Configuration.getInstance().load(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
-        Configuration.getInstance().setUserAgentValue(getPackageName());
+        // Configure OSMDroid User-Agent and internal tile storage
+        // Note: OpenStreetMap blocks default "com.example.myapplication" User-Agent.
+        Configuration.getInstance().setUserAgentValue("SafeTrackChildTracker_v1_0_App");
         Configuration.getInstance().setOsmdroidBasePath(getCacheDir());
         Configuration.getInstance().setOsmdroidTileCache(getCacheDir());
 
